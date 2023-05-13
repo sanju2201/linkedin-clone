@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import "./css/login.css"
-import { auth } from "firebase"
 import { loginuser } from './features/userSlice';
 import { useDispatch } from 'react-redux';
+import { auth } from './firebase';
+
 function  Login() {
     const [signup, setSignup] = useState(false);
     const [name, setName] = useState("");
@@ -18,17 +19,14 @@ function  Login() {
         if(!name)
         {
             return alert("Name is required")
-
         }
         if(!photoURL)
         {
             return alert("PhotoURL is required")
-
         }
         if(!email)
         {
             return alert("Email is required")
-
         }
         if(!password)
         {
@@ -59,12 +57,10 @@ function  Login() {
           if(!email)
         {
             return alert("Email is required")
-
         }
         if(!password)
         {
             return alert("Password is required")
-
         }
         auth.signInWithEmailAndPassword(email,password).then(({user})=>{
             dispatch(loginuser({
