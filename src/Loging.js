@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./css/login.css"
 import { auth } from './firebase';
-import { loginuser } from './features/counter/userSlice';
+import { loginuser } from './features/userSlice';
+import { useDispatch } from 'react-redux';
 function  Login() {
-    const [signup, setSignUp] = useState(false);
+    const [signup, setSignup] = useState(false);
     const [name, setName] = useState("");
     const [photoURL, setPhotoURL] = useState("");
     const [email, setEmail] = useState("");
@@ -87,7 +88,7 @@ function  Login() {
                 <input type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
                 <input type="Submit" value="Sign Up"/>
                 
-                <h4>Already a member ?<span onClick={e=>setSignUp(false)}>Login Here</span></h4>
+                <h4>Already a member ?<span onClick={e=>setSignup(false)}>Login Here</span></h4>
                 </form>) 
                 : 
                 (<form onSubmit={signIn}>
@@ -95,7 +96,7 @@ function  Login() {
     <input type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
     <input type="Submit" value="Sign In"/>
 
-    <h4>Not a member ?<span onClick={e=>setSignUp(true)}>Register Here</span></h4>
+    <h4>Not a member ?<span onClick={e=>setSignup(true)}>Register Here</span></h4>
 </form>)
  }
  </div>

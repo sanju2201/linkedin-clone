@@ -7,9 +7,9 @@ import { Avatar } from "@mui/material"
 import Post from './Post';
 import "./css/feed.css"
 import { db } from './firebase';
-import firebase from "firebase"
+import firebase from "./firebase"
 import { useSelector } from 'react-redux';
-import { selectUser } from './features/counter/userSlice';
+import { selectUser } from './features/userSlice';
 
 
 function Feed() {

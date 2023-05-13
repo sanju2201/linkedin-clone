@@ -9,7 +9,7 @@ import MessageIcon from '@mui/icons-material/Message';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import {Avatar} from "@mui/material"
 import { useSelector } from 'react-redux';
-import { selectUser } from './features/counter/userSlice';
+import { selectUser } from './features/userSlice';
 
 function Header() {
     const user = useSelector(selectUser)
