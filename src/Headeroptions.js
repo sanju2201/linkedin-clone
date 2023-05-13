@@ -3,7 +3,7 @@ import "./css/header.css"
 import { Avatar } from "@mui/material"
 import { useSelector } from 'react-redux'
 import { selectUser } from './features/userSlice'
-import firebase from "firebase"
+import firebase from 'firebase'
 function Headeroptions({ Icon, title, avatar}) {
     const user = useSelector(selectUser)
     return (
