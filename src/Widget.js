@@ -1,7 +1,6 @@
 import React from 'react'
 import InfoIcon from '@mui/icons-material/Info';
 import "./css/widget.css"
-
 function Widget() {
   return (
    <>    <div className="widget">
