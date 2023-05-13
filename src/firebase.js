@@ -8,9 +8,13 @@ const firebaseConfig = {
     messagingSenderId: "633026920089",
     appId: "1:633026920089:web:4c7843e6b9431942c3c208"
   };
+  //this special line of code here connect everything
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
-
+//get firestore database
   const db = firebaseApp.firestore();
 
-  export { db }
+  //we want to use firebase authentication
+  const auth = firebase.auth();
+
+  export { db, auth }

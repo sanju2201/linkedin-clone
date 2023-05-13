@@ -43,7 +43,7 @@
     align-items: center;
     margin: 0px 15px;
     font-size: 14px;
-    color: #565656;
+    color: #9e9c9c;
     cursor: pointer;
     position: relative;
 }
@@ -53,15 +53,14 @@
 .header_options:first-child::before {
     content: '';
     position: absolute;
-    left: 10px;
+    left: -10px;
     right: -10px;
     background-color: #333;
     height: 1px;
     bottom: -7px;
-    }
+ }
 .header_options .MuiAvatar-circular {
     width: 30px;
     height: 30px;
     object-fit: contain;
-
 }
