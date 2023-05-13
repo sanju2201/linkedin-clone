@@ -12,7 +12,7 @@ const firebaseConfig = {
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
 //get firestore database
-  const db = firebaseApp.firestore();
+  const db = firebase.firestore();
 
   //we want to use firebase authentication
   const auth = firebase.auth();
