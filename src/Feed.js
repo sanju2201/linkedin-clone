@@ -6,8 +6,8 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Avatar } from "@mui/material"
 import Post from './Post';
 import "./css/feed.css"
-import { db } from './firebase';
-import firebase from "./firebase"
+import { db } from 'firebase'
+import firebase from 'firebase'
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 
@@ -21,10 +21,10 @@ const submitPost=(e)=>{
     e.preventDefault();
     db.collection("posts").add({
         name:user.displayName,
-        description:" ",
+        description:" This project is clone ",
         message:input,
         photoURL:user.photoURL,
-        timestamp:firebase.firestore.FieldValue.serverTimestamp(),
+       timestamp:firebase.firestore.FieldValue.serverTimestamp(), 
     });
     setInput(" ");
    
