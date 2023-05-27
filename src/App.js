@@ -7,47 +7,49 @@ import Login from './Login';
 import { loginuser, logoutuser, selectUser } from './features/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './firebase';
+import { useAuthState } from "react-firebase-hooks/auth"
 
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-useEffect(()=>{
-auth.onAuthStateChange((userAuth)=>{
-  if(userAuth) {
-    //login 
-    dispatch(loginuser({
-      email:userAuth.email,
-                uid:userAuth.uid,
-                photoURL:userAuth.photoURL,
-                displayName:userAuth.displayName
+  const [userState] = useAuthState(auth);
+  // useEffect(() => {
+  // auth.onAuthStateChange((userAuth) => {
+  //   if (userAuth) {
+  //     //login 
+  //     dispatch(loginuser({
+  //       email: userAuth.email,
+  //       uid: userAuth.uid,
+  //       photoURL: userAuth.photoURL,
+  //       displayName: userAuth.displayName
 
-          }))
-  }
-  else {
-    //logout
-    dispatch(logoutuser())
-  }
+  //     }))
+  //   }
+  //   else {
+  //     //logout
+  //     dispatch(logoutuser())
+  //   }
 
-})
-},[])
+  // })
+  // }, [])
   return (
     <>
-    {
-      !user ? (<Login/>) : (
-        <div className="ap-wrapper">
-      <Header/>
-      <div className="app-body">
-        <Sidebar/>
-        <Feed/>
-        <Widget/>
+      {
+        !user ? (<Login />) : (
+          <div className="ap-wrapper">
+            <Header />
+            <div className="app-body">
+              <Sidebar />
+              <Feed />
+              <Widget />
 
-      </div>
+            </div>
 
 
-    </div>
-      )
-}
-</>
+          </div>
+        )
+      }
+    </>
   );
 }
 

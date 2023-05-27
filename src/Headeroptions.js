@@ -3,8 +3,8 @@ import "./css/header.css"
 import { Avatar } from "@mui/material"
 import { useSelector } from 'react-redux'
 import { selectUser } from './features/userSlice'
-import firebase from 'firebase'
-function Headeroptions({ Icon, title, avatar}) {
+import firebase from 'firebase/compat/app';
+function Headeroptions({ Icon, title, avatar }) {
     const user = useSelector(selectUser)
     return (
         <div className="header_opions">
@@ -12,8 +12,8 @@ function Headeroptions({ Icon, title, avatar}) {
                 Icon && <Icon></Icon>
             }
             {
-                avatar && <Avatar name={avatar} src={user.photoURL} onClick={e=>firebase.auth().signOut()}/>
-            }      
+                avatar && <Avatar name={avatar} src={user.photoURL} onClick={e => firebase.auth().signOut()} />
+            }
             <span>{title}</span>
         </div>
     )
